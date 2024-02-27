@@ -1,0 +1,20 @@
+name: Deploy easy_order ecommerce on push
+on:
+  push:
+    branches:
+      - main
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v3
+
+    - name: Push files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.SERVER_NAME }}
+        username: ${{ secrets.USERNAME_MIN }}
+        password: ${{ secrets.PASSWORD_MIN }}
+        port: 21
