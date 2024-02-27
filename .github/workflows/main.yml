@@ -1,4 +1,4 @@
-name: Deploy easy_order ecommerce on push
+name: Deploy Errors and solutions
 on:
   push:
     branches:
